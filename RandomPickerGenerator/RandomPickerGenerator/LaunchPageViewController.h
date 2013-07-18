@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface LaunchPageViewController : UIViewController
+- (IBAction)onRollDiceButtonClicked:(id)sender;
+- (IBAction)onDrawCardButtonClicked:(id)sender;
+- (IBAction)onTossCoinButtonClicked:(id)sender;
+- (IBAction)onCustomRandomButtonClicked:(id)sender;
+
+
 
 @end

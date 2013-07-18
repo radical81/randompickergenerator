@@ -39,7 +39,31 @@
 
 -(NSMutableArray*) randomize {
     NSMutableArray* resultSet =[[[NSMutableArray alloc]init] autorelease];
+    for (int i = 0; i < numberOfSelections; i++) {
+        int nElement = [self getSizeOfSet];
+        while (true) {
+            int index = arc4random_uniform(nElement);
+            RandomElement* element = [self getElementAtIndex:index];
+            if (![resultSet containsObject:element] || canRepeatElements) {
+                [resultSet addObject:element];
+                break;
+            }
+        }
+    }
     return resultSet;
+}
+
+
++ (RandomElementCollection*) generateTossCoinRandomCollection {
+    return nil;
+}
+
++ (RandomElementCollection*) generateDrawCardRandomCollection {
+    return nil;
+}
+
++ (RandomElementCollection*) generateRollDiceRandomCollection {
+    return nil;
 }
 
 @end

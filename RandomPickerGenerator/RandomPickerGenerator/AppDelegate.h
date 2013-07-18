@@ -16,4 +16,7 @@
 
 @property (strong, nonatomic) LaunchPageViewController *launchPageViewController;
 
+@property (strong, nonatomic) UINavigationController *navigationController;
+
+
 @end

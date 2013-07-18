@@ -19,4 +19,9 @@
 -(int) getSizeOfSet;
 -(RandomElement*)getElementAtIndex:(int)_index;
 -(NSMutableArray*) randomize;
+
++ (RandomElementCollection*) generateTossCoinRandomCollection;
++ (RandomElementCollection*) generateDrawCardRandomCollection;
++ (RandomElementCollection*) generateRollDiceRandomCollection;
+
 @end

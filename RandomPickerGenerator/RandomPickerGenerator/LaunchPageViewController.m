@@ -7,6 +7,9 @@
 //
 
 #import "LaunchPageViewController.h"
+#import "RandomElementCollection.h"
+#import "ResultsViewController.h"
+#import "CustomRandomCollectionTableViewController.h"
 
 @implementation LaunchPageViewController
 
@@ -57,4 +60,35 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
+- (IBAction)onRollDiceButtonClicked:(id)sender {
+    RandomElementCollection* collection = [RandomElementCollection generateRollDiceRandomCollection];
+    [self pushResultsViewControllerWithCollection:collection];
+}
+
+- (IBAction)onDrawCardButtonClicked:(id)sender {
+    RandomElementCollection* collection = [RandomElementCollection generateDrawCardRandomCollection];
+    [self pushResultsViewControllerWithCollection:collection];
+}
+
+- (IBAction)onTossCoinButtonClicked:(id)sender {
+    RandomElementCollection* collection = [RandomElementCollection generateTossCoinRandomCollection];
+    [self pushResultsViewControllerWithCollection:collection];
+}
+
+- (IBAction)onCustomRandomButtonClicked:(id)sender {
+    CustomRandomCollectionTableViewController* controller = [[CustomRandomCollectionTableViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+}
+
+- (void) pushResultsViewControllerWithCollection: (RandomElementCollection*) collection {
+    ResultsViewController* controller = [[ResultsViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+}
+
+- (void)dealloc {
+    [super dealloc];
+}
 @end

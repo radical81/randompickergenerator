@@ -19,6 +19,7 @@
 {
     [_window release];
     [_launchPageViewController release];
+    [_navigationController release];
     [super dealloc];
 }
 
@@ -26,8 +27,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.launchPageViewController = [[[LaunchPageViewController alloc] initWithNibName:@"LaunchPageViewController" bundle:nil] autorelease];
-    self.window.rootViewController = self.launchPageViewController;
+    self.launchPageViewController = [[[LaunchPageViewController alloc] initWithNibName:@"LaunchPageViewController" bundle:nil] autorelease];    
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.launchPageViewController] autorelease];
+    self.window.rootViewController = self.navigationController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
