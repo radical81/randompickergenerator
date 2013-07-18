@@ -22,6 +22,12 @@
 		1742EBEB1797F3F600CCDDE8 /* RandomPickerGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBEA1797F3F600CCDDE8 /* RandomPickerGeneratorTests.m */; };
 		1742EBFC1797F67200CCDDE8 /* RandomElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBFB1797F67200CCDDE8 /* RandomElement.m */; };
 		1742EBFF1797F68F00CCDDE8 /* RandomElementCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */; };
+		1742EC031797F9D900CCDDE8 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EC011797F9D900CCDDE8 /* ResultsViewController.m */; };
+		1742EC041797F9D900CCDDE8 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742EC021797F9D900CCDDE8 /* ResultsViewController.xib */; };
+		1742EC081797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EC061797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m */; };
+		1742EC091797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742EC071797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib */; };
+		1742EC0D1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EC0B1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m */; };
+		1742EC0E1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742EC0C1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,15 @@
 		1742EBFB1797F67200CCDDE8 /* RandomElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomElement.m; sourceTree = "<group>"; };
 		1742EBFD1797F68F00CCDDE8 /* RandomElementCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomElementCollection.h; sourceTree = "<group>"; };
 		1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomElementCollection.m; sourceTree = "<group>"; };
+		1742EC001797F9D900CCDDE8 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = SOURCE_ROOT; };
+		1742EC011797F9D900CCDDE8 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = SOURCE_ROOT; };
+		1742EC021797F9D900CCDDE8 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = SOURCE_ROOT; };
+		1742EC051797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRandomCollectionTableViewController.h; sourceTree = SOURCE_ROOT; };
+		1742EC061797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRandomCollectionTableViewController.m; sourceTree = SOURCE_ROOT; };
+		1742EC071797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomRandomCollectionTableViewController.xib; sourceTree = SOURCE_ROOT; };
+		1742EC0A1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCustomRandomCollectionViewController.h; sourceTree = "<group>"; };
+		1742EC0B1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCustomRandomCollectionViewController.m; sourceTree = "<group>"; };
+		1742EC0C1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCustomRandomCollectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +139,15 @@
 				1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */,
 				1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */,
 				1742EBC61797F3F600CCDDE8 /* Supporting Files */,
+				1742EC001797F9D900CCDDE8 /* ResultsViewController.h */,
+				1742EC011797F9D900CCDDE8 /* ResultsViewController.m */,
+				1742EC021797F9D900CCDDE8 /* ResultsViewController.xib */,
+				1742EC051797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.h */,
+				1742EC061797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m */,
+				1742EC071797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib */,
+				1742EC0A1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.h */,
+				1742EC0B1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m */,
+				1742EC0C1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib */,
 			);
 			path = RandomPickerGenerator;
 			sourceTree = "<group>";
@@ -242,6 +266,9 @@
 			files = (
 				1742EBCA1797F3F600CCDDE8 /* InfoPlist.strings in Resources */,
 				1742EBD61797F3F600CCDDE8 /* LaunchPageViewController.xib in Resources */,
+				1742EC041797F9D900CCDDE8 /* ResultsViewController.xib in Resources */,
+				1742EC091797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib in Resources */,
+				1742EC0E1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +308,9 @@
 				1742EBD31797F3F600CCDDE8 /* LaunchPageViewController.m in Sources */,
 				1742EBFC1797F67200CCDDE8 /* RandomElement.m in Sources */,
 				1742EBFF1797F68F00CCDDE8 /* RandomElementCollection.m in Sources */,
+				1742EC031797F9D900CCDDE8 /* ResultsViewController.m in Sources */,
+				1742EC081797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m in Sources */,
+				1742EC0D1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
