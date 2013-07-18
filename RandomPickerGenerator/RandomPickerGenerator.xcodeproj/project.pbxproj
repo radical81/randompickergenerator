@@ -132,22 +132,11 @@
 		1742EBC51797F3F600CCDDE8 /* RandomPickerGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				D1D849CD1797FC0F00F605A5 /* ViewController */,
 				1742EBF81797F64800CCDDE8 /* Classes */,
 				1742EBCE1797F3F600CCDDE8 /* AppDelegate.h */,
 				1742EBCF1797F3F600CCDDE8 /* AppDelegate.m */,
-				1742EBD11797F3F600CCDDE8 /* LaunchPageViewController.h */,
-				1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */,
-				1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */,
 				1742EBC61797F3F600CCDDE8 /* Supporting Files */,
-				1742EC001797F9D900CCDDE8 /* ResultsViewController.h */,
-				1742EC011797F9D900CCDDE8 /* ResultsViewController.m */,
-				1742EC021797F9D900CCDDE8 /* ResultsViewController.xib */,
-				1742EC051797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.h */,
-				1742EC061797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m */,
-				1742EC071797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib */,
-				1742EC0A1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.h */,
-				1742EC0B1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m */,
-				1742EC0C1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib */,
 			);
 			path = RandomPickerGenerator;
 			sourceTree = "<group>";
@@ -191,6 +180,25 @@
 				1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		D1D849CD1797FC0F00F605A5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1742EBD11797F3F600CCDDE8 /* LaunchPageViewController.h */,
+				1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */,
+				1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */,
+				1742EC001797F9D900CCDDE8 /* ResultsViewController.h */,
+				1742EC011797F9D900CCDDE8 /* ResultsViewController.m */,
+				1742EC021797F9D900CCDDE8 /* ResultsViewController.xib */,
+				1742EC051797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.h */,
+				1742EC061797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.m */,
+				1742EC071797FA1800CCDDE8 /* CustomRandomCollectionTableViewController.xib */,
+				1742EC0A1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.h */,
+				1742EC0B1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.m */,
+				1742EC0C1797FA7C00CCDDE8 /* AddCustomRandomCollectionViewController.xib */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
