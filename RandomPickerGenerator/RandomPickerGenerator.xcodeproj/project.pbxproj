@@ -13,13 +13,15 @@
 		1742EBCA1797F3F600CCDDE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1742EBC81797F3F600CCDDE8 /* InfoPlist.strings */; };
 		1742EBCC1797F3F600CCDDE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBCB1797F3F600CCDDE8 /* main.m */; };
 		1742EBD01797F3F600CCDDE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBCF1797F3F600CCDDE8 /* AppDelegate.m */; };
-		1742EBD31797F3F600CCDDE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBD21797F3F600CCDDE8 /* ViewController.m */; };
-		1742EBD61797F3F600CCDDE8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742EBD41797F3F600CCDDE8 /* ViewController.xib */; };
+		1742EBD31797F3F600CCDDE8 /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */; };
+		1742EBD61797F3F600CCDDE8 /* LaunchPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */; };
 		1742EBDE1797F3F600CCDDE8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1742EBDD1797F3F600CCDDE8 /* SenTestingKit.framework */; };
 		1742EBDF1797F3F600CCDDE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1742EBBF1797F3F600CCDDE8 /* UIKit.framework */; };
 		1742EBE01797F3F600CCDDE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1742EBC11797F3F600CCDDE8 /* Foundation.framework */; };
 		1742EBE81797F3F600CCDDE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1742EBE61797F3F600CCDDE8 /* InfoPlist.strings */; };
 		1742EBEB1797F3F600CCDDE8 /* RandomPickerGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBEA1797F3F600CCDDE8 /* RandomPickerGeneratorTests.m */; };
+		1742EBFC1797F67200CCDDE8 /* RandomElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBFB1797F67200CCDDE8 /* RandomElement.m */; };
+		1742EBFF1797F68F00CCDDE8 /* RandomElementCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +45,19 @@
 		1742EBCD1797F3F600CCDDE8 /* RandomPickerGenerator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RandomPickerGenerator-Prefix.pch"; sourceTree = "<group>"; };
 		1742EBCE1797F3F600CCDDE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1742EBCF1797F3F600CCDDE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1742EBD11797F3F600CCDDE8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1742EBD21797F3F600CCDDE8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1742EBD51797F3F600CCDDE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		1742EBD11797F3F600CCDDE8 /* LaunchPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchPageViewController.h; sourceTree = "<group>"; };
+		1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchPageViewController.m; sourceTree = "<group>"; };
+		1742EBD51797F3F600CCDDE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchPageViewController.xib; sourceTree = "<group>"; };
 		1742EBDC1797F3F600CCDDE8 /* RandomPickerGeneratorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomPickerGeneratorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1742EBDD1797F3F600CCDDE8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1742EBE51797F3F600CCDDE8 /* RandomPickerGeneratorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RandomPickerGeneratorTests-Info.plist"; sourceTree = "<group>"; };
 		1742EBE71797F3F600CCDDE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1742EBE91797F3F600CCDDE8 /* RandomPickerGeneratorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomPickerGeneratorTests.h; sourceTree = "<group>"; };
 		1742EBEA1797F3F600CCDDE8 /* RandomPickerGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomPickerGeneratorTests.m; sourceTree = "<group>"; };
+		1742EBFA1797F67200CCDDE8 /* RandomElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomElement.h; sourceTree = "<group>"; };
+		1742EBFB1797F67200CCDDE8 /* RandomElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomElement.m; sourceTree = "<group>"; };
+		1742EBFD1797F68F00CCDDE8 /* RandomElementCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomElementCollection.h; sourceTree = "<group>"; };
+		1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomElementCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +117,12 @@
 		1742EBC51797F3F600CCDDE8 /* RandomPickerGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				1742EBF81797F64800CCDDE8 /* Classes */,
 				1742EBCE1797F3F600CCDDE8 /* AppDelegate.h */,
 				1742EBCF1797F3F600CCDDE8 /* AppDelegate.m */,
-				1742EBD11797F3F600CCDDE8 /* ViewController.h */,
-				1742EBD21797F3F600CCDDE8 /* ViewController.m */,
-				1742EBD41797F3F600CCDDE8 /* ViewController.xib */,
+				1742EBD11797F3F600CCDDE8 /* LaunchPageViewController.h */,
+				1742EBD21797F3F600CCDDE8 /* LaunchPageViewController.m */,
+				1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */,
 				1742EBC61797F3F600CCDDE8 /* Supporting Files */,
 			);
 			path = RandomPickerGenerator;
@@ -149,6 +156,17 @@
 				1742EBE61797F3F600CCDDE8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1742EBF81797F64800CCDDE8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1742EBFA1797F67200CCDDE8 /* RandomElement.h */,
+				1742EBFB1797F67200CCDDE8 /* RandomElement.m */,
+				1742EBFD1797F68F00CCDDE8 /* RandomElementCollection.h */,
+				1742EBFE1797F68F00CCDDE8 /* RandomElementCollection.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1742EBCA1797F3F600CCDDE8 /* InfoPlist.strings in Resources */,
-				1742EBD61797F3F600CCDDE8 /* ViewController.xib in Resources */,
+				1742EBD61797F3F600CCDDE8 /* LaunchPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +278,9 @@
 			files = (
 				1742EBCC1797F3F600CCDDE8 /* main.m in Sources */,
 				1742EBD01797F3F600CCDDE8 /* AppDelegate.m in Sources */,
-				1742EBD31797F3F600CCDDE8 /* ViewController.m in Sources */,
+				1742EBD31797F3F600CCDDE8 /* LaunchPageViewController.m in Sources */,
+				1742EBFC1797F67200CCDDE8 /* RandomElement.m in Sources */,
+				1742EBFF1797F68F00CCDDE8 /* RandomElementCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,12 +311,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1742EBD41797F3F600CCDDE8 /* ViewController.xib */ = {
+		1742EBD41797F3F600CCDDE8 /* LaunchPageViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1742EBD51797F3F600CCDDE8 /* en */,
 			);
-			name = ViewController.xib;
+			name = LaunchPageViewController.xib;
 			sourceTree = "<group>";
 		};
 		1742EBE61797F3F600CCDDE8 /* InfoPlist.strings */ = {
@@ -428,6 +448,7 @@
 				1742EBF01797F3F600CCDDE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1742EBF11797F3F600CCDDE8 /* Build configuration list for PBXNativeTarget "RandomPickerGeneratorTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +457,7 @@
 				1742EBF31797F3F600CCDDE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
