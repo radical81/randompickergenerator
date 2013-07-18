@@ -14,6 +14,7 @@
 
 @synthesize window = _window;
 @synthesize launchPageViewController = _launchPageViewController;
+@synthesize navigationController = _navigationController;
 
 - (void)dealloc
 {
