@@ -59,7 +59,9 @@
 }
 
 + (RandomElementCollection*) generateDrawCardRandomCollection {
-    return nil;
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    
+    return [collection autorelease];
 }
 
 + (RandomElementCollection*) generateRollDiceRandomCollection {
