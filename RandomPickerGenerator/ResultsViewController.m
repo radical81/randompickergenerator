@@ -78,26 +78,34 @@
     [super viewWillDisappear:animated];
 }
 
+-(void) animateUsingCollectionImages {
+    UIImage* imageFromName = [[UIImage alloc]init];
+    NSMutableArray* imagesArray = [[NSMutableArray alloc]init];
+        for (RandomElement* element in collection.randomElementsArray) {
+             imageFromName = [UIImage imageNamed:[element elementImage]];
+            [imagesArray addObject:imageFromName];
+        }
+    [imageFromName release];
+
+    NSArray* imagesForAnimation = [[NSArray alloc]initWithArray:imagesArray];
+    [imagesArray release];
+
+    [_animatingImageView setAnimationImages:imagesForAnimation];
+     [imagesForAnimation release];
+    _animatingImageView.animationRepeatCount = 5;
+    [_animatingImageView startAnimating];
+}
+  
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    if (motion == UIEventSubtypeMotionShake)
-    {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You shake"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//        [alert release];
-        
-//        NSMutableArray* result  = [collection randomize];
-//        for (RandomElement* element in result) {
-//            NSLog(@"%@", [element elementImage]);
-//            int index = [collection getIndexForRandomElement:element];
-//            NSIndexPath* path = [NSIndexPath indexPathForItem:index inSection:0];
-//            [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-//        }
+    if (motion == UIEventSubtypeMotionShake) {
+        [self animateUsingCollectionImages];
     }
+}
+
+- (void) animationEnd {
+
 }
 
 
