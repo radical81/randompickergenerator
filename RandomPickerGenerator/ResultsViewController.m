@@ -44,6 +44,7 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Let's get random"];
+    
 }
 
 - (void)viewDidUnload
@@ -81,21 +82,24 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You shake"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//        [alert release];
         
-//        NSMutableArray* result  = [collection randomize];
-//        for (RandomElement* element in result) {
-//            NSLog(@"%@", [element elementImage]);
-//            int index = [collection getIndexForRandomElement:element];
-//            NSIndexPath* path = [NSIndexPath indexPathForItem:index inSection:0];
-//            [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-//        }
+        NSMutableArray* result  = [collection randomize];
+        [self animationEndWithResult:result];
+    }
+}
+
+
+//Populate the result
+- (void) animationEndWithResult: (NSArray*) result {
+    int imageX = 10;
+    int imageHeight = 50;
+    int imageWidth = 50;
+    for (RandomElement* element in result) {
+        NSString* imageName = [element elementImage];
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        imageView.frame = CGRectMake(imageX, 0, imageWidth, imageHeight);
+        [_resultViewContainer addSubview:imageView];
+        imageX += 55;
     }
 }
 
