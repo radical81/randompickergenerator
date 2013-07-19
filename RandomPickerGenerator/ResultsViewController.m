@@ -79,26 +79,25 @@
     [super viewWillDisappear:animated];
 }
 
--(void) animateUsingCollectionImages {
-    UIImage* imageFromName = [[UIImage alloc]init];
+-(void) animateUsingCollectionImages:(NSArray*)randomResults {
     NSMutableArray* imagesArray = [[NSMutableArray alloc]init];
         for (RandomElement* element in collection.randomElementsArray) {
-             imageFromName = [UIImage imageNamed:[element elementImage]];
+            UIImage* imageFromName = [UIImage imageNamed:[element elementImage]];
             [imagesArray addObject:imageFromName];
         }
-    [imageFromName release];
 
-    NSArray* imagesForAnimation = [[NSArray alloc]initWithArray:imagesArray];
+    [_animatingImageView setAnimationImages:imagesArray];
     [imagesArray release];
-
-    [_animatingImageView setAnimationImages:imagesForAnimation];
-     [imagesForAnimation release];
-    _animatingImageView.animationRepeatCount = 5;
     [_animatingImageView startAnimating];
+    [self performSelector:@selector(endAnimation:) withObject:randomResults afterDelay:1];
 }
+
 
 //Populate the result
 - (void) animationEndWithResult: (NSArray*) result {
+    UIImage* resultImage = [UIImage imageNamed:[[result lastObject] elementImage]];
+    [_animatingImageView setImage:resultImage];
+
     int imageX = 10;
     int imageHeight = 50;
     int imageWidth = 50;
@@ -111,11 +110,17 @@
     }
 }
 
+- (void) endAnimation:(NSArray*) randomResults {
+    NSLog(@"endAnimation");
+    [_animatingImageView stopAnimating];
+    [self animationEndWithResult:randomResults];
+}
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake) {
-        [self animateUsingCollectionImages];
-        [self animationEndWithResult:[collection randomize]];
+        NSArray* randomResults = [collection randomize];
+        [self animateUsingCollectionImages:randomResults];
     }
 }
 
