@@ -55,17 +55,37 @@
 
 
 + (RandomElementCollection*) generateTossCoinRandomCollection {
-    return nil;
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:YES];
+    NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"coin-head.jpg",@"coin-tail.jpg", nil];
+    [RandomElementCollection addListRandomElementImage:listImageNames toCollection:collection];
+    return [collection autorelease];
 }
 
 + (RandomElementCollection*) generateDrawCardRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
-    
     return [collection autorelease];
 }
 
 + (RandomElementCollection*) generateRollDiceRandomCollection {
-    return nil;
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:YES];
+    NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"dice1.png",@"dice2.png", @"dice3.png", @"dice4.png", @"dice5.png",@"dice6.png",nil];
+    [RandomElementCollection addListRandomElementImage:listImageNames toCollection:collection];
+    return [collection autorelease];
+}
+
++ (void) addListRandomElementImage: (NSArray*) listElementImage toCollection:(RandomElementCollection*) collection {
+    NSMutableArray* arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [listElementImage count]; i++) {
+        RandomElement* element = [[RandomElement alloc] initWithImage:[listElementImage objectAtIndex:i]];
+        [arr addObject:element];
+        [element release];
+    }
+    [collection setRandomElementsArray:arr];
+    [arr release];
 }
 
 @end
