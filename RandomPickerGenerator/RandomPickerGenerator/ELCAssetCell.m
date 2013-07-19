@@ -12,6 +12,8 @@
 
 @property (nonatomic, retain) NSArray *rowAssets;
 @property (nonatomic, retain) NSMutableArray *imageViewArray;
+
+
 @property (nonatomic, retain) NSMutableArray *overlayViewArray;
 
 @end
@@ -19,6 +21,8 @@
 @implementation ELCAssetCell
 
 @synthesize rowAssets = _rowAssets;
+@synthesize imageViewArray = _imageViewArray;
+@synthesize overlayViewArray = _overlayViewArray;
 
 - (id)initWithAssets:(NSArray *)assets reuseIdentifier:(NSString *)identifier
 {

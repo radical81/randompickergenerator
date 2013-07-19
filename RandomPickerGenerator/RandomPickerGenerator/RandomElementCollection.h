@@ -21,7 +21,8 @@
 -(NSMutableArray*) randomize;
 -(int) getIndexForRandomElement: (RandomElement*) element;
 - (void) shuffle;
-
++ (RandomElementCollection*) generateEngineersCollection;
++ (RandomElementCollection*) generateRockPaperScissorsCollection;
 + (RandomElementCollection*) generateTossCoinRandomCollection;
 + (RandomElementCollection*) generateDrawCardRandomCollection;
 + (RandomElementCollection*) generateRollDiceRandomCollection;

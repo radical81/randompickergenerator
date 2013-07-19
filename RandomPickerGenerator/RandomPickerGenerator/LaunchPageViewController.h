@@ -13,6 +13,7 @@
 - (IBAction)onDrawCardButtonClicked:(id)sender;
 - (IBAction)onTossCoinButtonClicked:(id)sender;
 - (IBAction)onRockPaperScissorsButtonClicked:(id)sender;
+- (IBAction)onEngineersButtonClicked:(id)sender;
 - (IBAction)onCustomRandomButtonClicked:(id)sender;
 
 
