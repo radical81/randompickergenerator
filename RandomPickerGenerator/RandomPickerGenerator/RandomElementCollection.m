@@ -17,7 +17,7 @@
 -(id) initWithArray:(NSArray*)_randomElementsArray numberOfSelections: (int) _numberOfSelections canRepeatElements: (BOOL) _canRepeatElements {
     self = [super init];
     if(self) {
-        randomElementsArray = _randomElementsArray;
+        randomElementsArray = [[NSMutableArray alloc] initWithArray: _randomElementsArray];
         numberOfSelections = _numberOfSelections;
         canRepeatElements = _canRepeatElements;
     }
@@ -57,12 +57,23 @@
     return [randomElementsArray indexOfObject:element];
 }
 
+- (void) shuffle {
+    NSUInteger count = [randomElementsArray count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [randomElementsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+
 + (RandomElementCollection*) generateTossCoinRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
     [collection setNumberOfSelections:1];
     [collection setCanRepeatElements:YES];
-    NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"coin-head.jpg",@"coin-tail.jpg", nil];
+    NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"coin-head.jpg",@"coin-tail.jpg", @"coin-head.jpg",@"coin-tail.jpg",@"coin-head.jpg",@"coin-tail.jpg",nil];
     [RandomElementCollection addListRandomElementImage:listImageNames toCollection:collection];
+//    [collection shuffle];
     return [collection autorelease];
 }
 
@@ -101,6 +112,8 @@
     
     
     [RandomElementCollection addListRandomElementImage:arr toCollection:collection];
+    [collection shuffle];
+    
     return [collection autorelease];
 }
 
@@ -109,7 +122,10 @@
     [collection setNumberOfSelections:1];
     [collection setCanRepeatElements:YES];
     NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"dice1.png",@"dice2.png", @"dice3.png", @"dice4.png", @"dice5.png",@"dice6.png",nil];
+    
     [RandomElementCollection addListRandomElementImage:listImageNames toCollection:collection];
+    [collection shuffle];
+    
     return [collection autorelease];
 }
 

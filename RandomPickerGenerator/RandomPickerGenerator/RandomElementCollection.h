@@ -11,7 +11,7 @@
 
 @interface RandomElementCollection : NSObject
 
-@property (nonatomic, retain) NSArray* randomElementsArray;
+@property (nonatomic, retain) NSMutableArray* randomElementsArray;
 @property (nonatomic) int numberOfSelections;
 @property (nonatomic) BOOL canRepeatElements;
 
@@ -20,6 +20,7 @@
 -(RandomElement*)getElementAtIndex:(int)_index;
 -(NSMutableArray*) randomize;
 -(int) getIndexForRandomElement: (RandomElement*) element;
+- (void) shuffle;
 
 + (RandomElementCollection*) generateTossCoinRandomCollection;
 + (RandomElementCollection*) generateDrawCardRandomCollection;

@@ -71,7 +71,7 @@ This method is called by UICollectionView for laying out cells in the visible re
             
             CATransform3D transform = CATransform3DIdentity;
 //            transform = CATransform3DTranslate(transform, rotationPoint.x - centerInMainView.x, rotationPoint.y - centerInMainView.y, 0.0);
-            transform = CATransform3DTranslate(transform, (rotationPoint.x - centerInMainView.x) * 0.6, rotationPoint.y - centerInMainView.y, 0.0);
+            transform = CATransform3DTranslate(transform, (rotationPoint.x - centerInMainView.x) * 0.5, rotationPoint.y - centerInMainView.y, 0.0);
             
             transform = CATransform3DRotate(transform, DEGREES_TO_RADIANS(-rotateBy), 0.0, 0.0, -1.0);
             

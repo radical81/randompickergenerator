@@ -96,7 +96,9 @@
         NSMutableArray* result  = [collection randomize];
         for (RandomElement* element in result) {
             NSLog(@"%@", [element elementImage]);
-            
+            int index = [collection getIndexForRandomElement:element];
+            NSIndexPath* path = [NSIndexPath indexPathForItem:index inSection:0];
+            [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
         }
     }
 }
