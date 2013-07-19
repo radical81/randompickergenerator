@@ -8,15 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "RandomElementCollection.h"
-#import "RVCollectionViewLayout.h"
 
-@interface ResultsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
-
+@interface ResultsViewController : UIViewController
 @property (nonatomic, retain) RandomElementCollection* collection;
+@property (retain, nonatomic) IBOutlet UIImageView *animatingImageView;
+@property (retain, nonatomic) IBOutlet UIView *resultViewContainer;
 
 
-@property (nonatomic, retain) IBOutlet UICollectionView * collectionView;
-@property (nonatomic, strong) NSMutableArray * imagesArray;
-@property (nonatomic, strong) NSMutableArray * imageNamesArray;
-@property (nonatomic, strong) RVCollectionViewLayout * collectionViewLayout;
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "ResultsViewController.h"
-#import "RVCollectionViewCell.h"
 
 @implementation ResultsViewController
 @synthesize collection;
@@ -25,6 +24,8 @@
 
 - (void) dealloc {
     [collection release];
+    [_animatingImageView release];
+    [_resultViewContainer release];
     [super dealloc];
 }
 
@@ -43,17 +44,12 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Let's get random"];
-    [self initImages];
-    
-    [self.collectionView registerClass:[RVCollectionViewCell class] forCellWithReuseIdentifier:@"ItemIdentifier"];
-    self.collectionView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-    self.collectionView.showsVerticalScrollIndicator = NO;
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
 - (void)viewDidUnload
 {
+    [self setAnimatingImageView:nil];
+    [self setResultViewContainer:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -93,77 +89,17 @@
 //        [alert show];
 //        [alert release];
         
-        NSMutableArray* result  = [collection randomize];
-        for (RandomElement* element in result) {
-            NSLog(@"%@", [element elementImage]);
-            int index = [collection getIndexForRandomElement:element];
-            NSIndexPath* path = [NSIndexPath indexPathForItem:index inSection:0];
-            [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-        }
+//        NSMutableArray* result  = [collection randomize];
+//        for (RandomElement* element in result) {
+//            NSLog(@"%@", [element elementImage]);
+//            int index = [collection getIndexForRandomElement:element];
+//            NSIndexPath* path = [NSIndexPath indexPathForItem:index inSection:0];
+//            [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+//        }
     }
 }
 
 
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.imagesArray count];
-}
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    RVCollectionViewCell *cell = (RVCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ItemIdentifier" forIndexPath:indexPath];
-    cell.imageView = self.imagesArray[indexPath.item];
-    cell.imageName = self.imageNamesArray[indexPath.item];
-    return cell;
-}
-
-#pragma mark - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // implement your cell selected logic here
-    UIImageView * selectedImageView = self.imagesArray[indexPath.item];
-    NSLog(@"selected image: %@", selectedImageView);
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"scrollViewDidEndDecelerating...");
-    [self printCurrentCard];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (!decelerate){
-        NSLog(@"scrollViewDidEndDragging...");
-        [self printCurrentCard];
-    }
-}
-
-- (void)printCurrentCard{
-    NSArray * visibleCards = self.collectionView.visibleCells;
-    [visibleCards enumerateObjectsUsingBlock:^(RVCollectionViewCell * visibleCell, NSUInteger idx, BOOL *stop) {
-        NSLog(@"visible cell: %@", visibleCell.imageName);
-    }];
-}
-
-
-- (void) initImages {
-    NSLog(@"Init Images");
-    self.imagesArray = [NSMutableArray array];
-    self.imageNamesArray = [NSMutableArray array];
-
-    
-    for (int i = 0; i < [collection getSizeOfSet]; i++) {
-        RandomElement* element = [collection getElementAtIndex:i];
-        NSLog(@"Image name = %@", [element elementImage]);
-        UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[element elementImage]]];
-        [self.imagesArray addObject:image];
-        [self.imageNamesArray addObject:[element elementImage]];
-    }
-}
 
 
 @end
