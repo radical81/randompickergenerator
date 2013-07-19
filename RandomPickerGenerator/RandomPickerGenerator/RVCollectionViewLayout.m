@@ -61,7 +61,8 @@ This method is called by UICollectionView for laying out cells in the visible re
         // amount of rotation to apply
         if (pointInMainView.x < self.collectionView.frame.size.width+80.0f){
             translateBy = [self calculateTranslateBy:horizontalCenter attribs:layoutAttributes];
-            rotateBy = [self calculateRotationFromViewPortDistance:pointInMainView.x center:horizontalCenter];
+//            rotateBy = [self calculateRotationFromViewPortDistance:pointInMainView.x center:horizontalCenter];
+            rotateBy = 0.0f;
             
             CGPoint rotationPoint = CGPointMake(self.collectionView.frame.size.width/2, self.collectionView.frame.size.height);
             
@@ -69,7 +70,9 @@ This method is called by UICollectionView for laying out cells in the visible re
             // a certain point.
             
             CATransform3D transform = CATransform3DIdentity;
-            transform = CATransform3DTranslate(transform, rotationPoint.x - centerInMainView.x, rotationPoint.y - centerInMainView.y, 0.0);
+//            transform = CATransform3DTranslate(transform, rotationPoint.x - centerInMainView.x, rotationPoint.y - centerInMainView.y, 0.0);
+            transform = CATransform3DTranslate(transform, (rotationPoint.x - centerInMainView.x) * 0.6, rotationPoint.y - centerInMainView.y, 0.0);
+            
             transform = CATransform3DRotate(transform, DEGREES_TO_RADIANS(-rotateBy), 0.0, 0.0, -1.0);
             
             // -30.0f to lift the cards up a bit

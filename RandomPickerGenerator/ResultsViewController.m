@@ -96,6 +96,7 @@
         NSMutableArray* result  = [collection randomize];
         for (RandomElement* element in result) {
             NSLog(@"%@", [element elementImage]);
+            
         }
     }
 }
