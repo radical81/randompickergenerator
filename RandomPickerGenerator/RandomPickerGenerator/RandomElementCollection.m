@@ -78,6 +78,15 @@
     [arr release];
 }
 
++ (RandomElementCollection*) generateEngineersCollection {
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:NO];
+    NSMutableArray* imageNames = [NSMutableArray arrayWithObjects:@"jason.jpg", @"kenny.jpg", @"poon.jpg", @"Sri.jpg",@"waihong.jpg",@"artemis.jpg",@"chien.jpg",@"ernesto.jpg",@"jamoy.jpg", nil];
+    [RandomElementCollection addListRandomElementImage:imageNames toCollection:collection];    
+    return [collection autorelease];
+}
+
 + (RandomElementCollection*) generateRockPaperScissorsCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
     [collection setNumberOfSelections:1];

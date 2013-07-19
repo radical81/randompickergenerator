@@ -84,6 +84,11 @@
     [self pushResultsViewControllerWithCollection:collection];
 }
 
+- (IBAction)onEngineersButtonClicked:(id)sender {
+    RandomElementCollection* collection = [RandomElementCollection generateEngineersCollection];
+    [self pushResultsViewControllerWithCollection:collection];    
+}
+
 - (IBAction)onCustomRandomButtonClicked:(id)sender {
     CustomRandomCollectionTableViewController* controller = [[CustomRandomCollectionTableViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
@@ -98,7 +103,7 @@
 }
 -(NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationPortrait;
 }
 
 - (void)dealloc {
