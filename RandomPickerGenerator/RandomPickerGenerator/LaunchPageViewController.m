@@ -24,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"Random Random"];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -54,11 +55,7 @@
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+
 
 
 - (IBAction)onRollDiceButtonClicked:(id)sender {
@@ -92,6 +89,15 @@
 //    [self.navigationController pushViewController:controller animated:YES];
 //    [controller release];
     
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)dealloc {
