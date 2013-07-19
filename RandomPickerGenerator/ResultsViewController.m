@@ -10,7 +10,8 @@
 
 @implementation ResultsViewController
 @synthesize collection;
-
+@synthesize animatingImageView = _animatingImageView;
+@synthesize resultViewContainer = _resultViewContainer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
