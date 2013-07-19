@@ -28,4 +28,5 @@
 + (RandomElementCollection*) generateRollDiceRandomCollection;
 + (RandomElementCollection*) generateTotallyRandomCollection;
 
++ (void) addListRandomElementImagePath: (NSArray*) listElementImage toCollection: (RandomElementCollection*) collection;
 @end

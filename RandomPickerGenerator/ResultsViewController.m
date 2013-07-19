@@ -104,7 +104,11 @@
 -(void) animateUsingCollectionImages:(NSArray*)randomResults {
     NSMutableArray* imagesArray = [[NSMutableArray alloc]init];
         for (RandomElement* element in collection.randomElementsArray) {
-            UIImage* imageFromName = [UIImage imageNamed:[element elementImage]];
+            UIImage* imageFromName = nil;
+            if ([element elementImage])
+                imageFromName = [UIImage imageNamed:[element elementImage]];
+            else
+                imageFromName = [self getImageFromImagePath:[element elementImagePath]];
             [imagesArray addObject:imageFromName];
         }
 
@@ -117,15 +121,28 @@
 
 //Populate the result
 - (void) animationEndWithResult: (NSArray*) result {
-    UIImage* resultImage = [UIImage imageNamed:[[result lastObject] elementImage]];
+    RandomElement* lastObject = [result lastObject];
+    UIImage* resultImage = nil;
+    if ([lastObject elementImage])
+        resultImage = [UIImage imageNamed:[[result lastObject] elementImage]];
+    else
+        resultImage = [self getImageFromImagePath:[lastObject elementImagePath]];
+    
     [_animatingImageView setImage:resultImage];
 
     int imageX = 10;
     int imageHeight = 50;
     int imageWidth = 50;
     for (RandomElement* element in result) {
-        NSString* imageName = [element elementImage];
-        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        UIImageView* imageView = nil;
+        if ([element elementImage]) {
+            NSString* imageName = [element elementImage];
+            imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        }
+        else {
+            UIImage* img = [self getImageFromImagePath:[element elementImagePath]];
+            imageView = [[UIImageView alloc] initWithImage:img];
+        }
         imageView.frame = CGRectMake(imageX, 0, imageWidth, imageHeight);
         [_resultViewContainer addSubview:imageView];
         imageX += 55;
@@ -147,7 +164,18 @@
 }
 
 
-
+- (UIImage*) getImageFromImagePath:(NSString*) imagePath {
+    NSLog(@"get Image from path: %@", imagePath);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", imagePath]];
+    NSLog(@"get Image from path: %@", fullPathToFile);
+    UIImage *image = [UIImage imageWithContentsOfFile:fullPathToFile];
+    if (image == nil) {
+        NSLog(@"image = nil");
+    }
+    return image;
+}
 
 
 @end

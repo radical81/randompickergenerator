@@ -79,6 +79,20 @@
     [arr release];
 }
 
+
+
++ (void) addListRandomElementImagePath: (NSArray*) listElementImage toCollection:(RandomElementCollection*) collection {
+    NSMutableArray* arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [listElementImage count]; i++) {
+        RandomElement* element = [[RandomElement alloc] initWithImagePath:[listElementImage objectAtIndex:i]];
+        [arr addObject:element];
+        [element release];
+    }
+    [collection setRandomElementsArray:arr];
+    [arr release];
+}
+
+
 + (RandomElementCollection*) generateEngineersCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
     [collection setNumberOfSelections:1];

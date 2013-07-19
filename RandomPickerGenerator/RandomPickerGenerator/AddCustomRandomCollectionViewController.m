@@ -11,6 +11,7 @@
 #import "ELCImagePickerController.h"
 #import "AppDelegate.h"
 
+
 @implementation AddCustomRandomCollectionViewController
 @synthesize listImages;
 @synthesize nameTextField = _nameTextField;
@@ -152,13 +153,26 @@
 }
 
 - (void) finishAdding {
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
     NSString * name = [_nameTextField text];
     NSString* nSelection = [_nSelectionTextField text];
     BOOL canRepeat = [_canRepeatSwitch isOn];
     
+    [dict setObject:name forKey:@"name"];
+    [dict setObject:nSelection forKey:@"nSelection"];
+    if (canRepeat) {
+        [dict setObject:@"1" forKey:@"canRepeat"];
+    }
+    else {
+        [dict setObject:@"0" forKey:@"canRepeat"];
+    }
+    
+    
     NSLog (@"name = %@, nSelection = %@", name, nSelection);
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSLog(@"path = %@", path);
+    NSMutableArray* listFileName = [NSMutableArray array];
     
     //Store the list of image & json
     for (int i = 0; i < [self.listImages count]; i++) {
@@ -167,7 +181,30 @@
         NSLog(@"fileName = %@", fileName);
         
         [self saveImage:image withFileName:fileName ofType:@"png" inDirectory:path];
+        [listFileName addObject:fileName];
     }
+    
+    [dict setObject:listFileName forKey:@"images"];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+                                                       options:0
+                                                         error:&error];
+    NSString* jsonStr =  [[[NSString alloc] initWithData:jsonData
+                                                                  encoding:NSUTF8StringEncoding] autorelease];
+    
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* arr = [defaults objectForKey:@"custom"];
+    NSMutableArray* mutableArr = [NSMutableArray array];
+    if (arr != nil) {
+        [mutableArr addObjectsFromArray:arr];
+    }
+    [mutableArr addObject:jsonStr];
+    [defaults setObject:mutableArr forKey:@"custom"];
+    [defaults synchronize];
+    [dict release];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSString*) generateRandomName {
