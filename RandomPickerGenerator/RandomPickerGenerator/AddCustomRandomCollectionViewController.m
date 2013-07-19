@@ -10,6 +10,11 @@
 
 @implementation AddCustomRandomCollectionViewController
 
+@synthesize addImagesButton = _addImagesButton;
+@synthesize imageAddedLabel = _imageAddedLabel;
+@synthesize nSelectionTextField = _nSelectionTextField;
+@synthesize canRepeatSwitch = _canRepeatSwitch;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
