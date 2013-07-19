@@ -32,11 +32,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finishAdding)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    [rightButton release];
+}
+
+- (void) finishAdding {
+
 }
 
 - (void)viewDidUnload
 {
+    [self setAddImagesButton:nil];
+    [self setImageAddedLabel:nil];
+    [self setNSelectionTextField:nil];
+    [self setCanRepeatSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -48,4 +58,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)dealloc {
+    [_addImagesButton release];
+    [_imageAddedLabel release];
+    [_nSelectionTextField release];
+    [_canRepeatSwitch release];
+    [super dealloc];
+}
+- (IBAction)onAddImagesButtonClicked:(id)sender {
+}
 @end

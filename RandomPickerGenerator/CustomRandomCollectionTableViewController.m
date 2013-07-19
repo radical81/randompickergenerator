@@ -7,6 +7,7 @@
 //
 
 #import "CustomRandomCollectionTableViewController.h"
+#import "AddCustomRandomCollectionViewController.h"
 
 @implementation CustomRandomCollectionTableViewController
 
@@ -38,6 +39,17 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRandomCollection)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    [rightButton release];
+}
+
+
+- (void) addRandomCollection {
+    AddCustomRandomCollectionViewController* controller = [[AddCustomRandomCollectionViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 - (void)viewDidUnload

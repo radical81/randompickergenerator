@@ -79,7 +79,7 @@
 
 + (RandomElementCollection*) generateDrawCardRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
-    [collection setNumberOfSelections:1];
+    [collection setNumberOfSelections:5];
     [collection setCanRepeatElements:YES];
     NSMutableArray* arr = [NSMutableArray array];
     for (int i = 457; i <= 466; i++) {

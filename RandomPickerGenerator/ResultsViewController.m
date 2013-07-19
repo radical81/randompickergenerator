@@ -45,6 +45,7 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Let's get random"];
+    
 }
 
 - (void)viewDidUnload
@@ -104,10 +105,20 @@
     }
 }
 
-- (void) animationEnd {
 
+//Populate the result
+- (void) animationEndWithResult: (NSArray*) result {
+    int imageX = 10;
+    int imageHeight = 50;
+    int imageWidth = 50;
+    for (RandomElement* element in result) {
+        NSString* imageName = [element elementImage];
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        imageView.frame = CGRectMake(imageX, 0, imageWidth, imageHeight);
+        [_resultViewContainer addSubview:imageView];
+        imageX += 55;
+    }
 }
-
 
 
 
