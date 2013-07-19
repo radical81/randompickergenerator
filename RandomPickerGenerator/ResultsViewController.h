@@ -13,6 +13,6 @@
 @property (nonatomic, retain) RandomElementCollection* collection;
 @property (retain, nonatomic) IBOutlet UIImageView *animatingImageView;
 @property (retain, nonatomic) IBOutlet UIView *resultViewContainer;
-
+@property (nonatomic) BOOL totallyRandom;
 
 @end

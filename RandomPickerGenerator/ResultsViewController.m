@@ -12,6 +12,7 @@
 @synthesize collection;
 @synthesize animatingImageView = _animatingImageView;
 @synthesize resultViewContainer = _resultViewContainer;
+@synthesize totallyRandom = _totallyRandom;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,7 +46,24 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Let's get random"];
-    
+    if(_totallyRandom) {
+        NSLog(@"Random Psy with collection %@", collection);
+        NSMutableArray* imagesArray = [[NSMutableArray alloc]init];
+        for (RandomElement* element in collection.randomElementsArray) {
+            UIImage* imageFromName = [UIImage imageNamed:[element elementImage]];
+            NSLog(@"image named %@", [element elementImage]);
+            if(imageFromName == nil){
+                NSLog(@"No image %@",[element elementImage]);
+            }
+            [imagesArray addObject:imageFromName];
+        }
+        NSLog(@"images are %@", imagesArray);
+        [_animatingImageView setAnimationImages:imagesArray];
+        [imagesArray release];
+        [_animatingImageView setAnimationRepeatCount:100];
+        [_animatingImageView setAnimationDuration:1];
+        [_animatingImageView startAnimating];
+    }
 }
 
 - (void)viewDidUnload
@@ -122,7 +140,7 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    if (motion == UIEventSubtypeMotionShake) {
+    if (motion == UIEventSubtypeMotionShake && !_totallyRandom) {
         NSArray* randomResults = [collection randomize];
         [self animateUsingCollectionImages:randomResults];
     }

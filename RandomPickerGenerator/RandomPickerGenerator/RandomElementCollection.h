@@ -26,5 +26,6 @@
 + (RandomElementCollection*) generateTossCoinRandomCollection;
 + (RandomElementCollection*) generateDrawCardRandomCollection;
 + (RandomElementCollection*) generateRollDiceRandomCollection;
++ (RandomElementCollection*) generateTotallyRandomCollection;
 
 @end

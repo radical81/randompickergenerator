@@ -15,7 +15,7 @@
 - (IBAction)onRockPaperScissorsButtonClicked:(id)sender;
 - (IBAction)onEngineersButtonClicked:(id)sender;
 - (IBAction)onCustomRandomButtonClicked:(id)sender;
-
+- (IBAction)onTotallyRandomButtonClicked:(id)sender;
 
 
 @end

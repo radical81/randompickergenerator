@@ -50,6 +50,7 @@
             }
         }
     }
+    NSLog(@"resultSet %@", resultSet);
     return resultSet;
 }
 
@@ -156,6 +157,17 @@
     [collection shuffle];
     
     return [collection autorelease];
+}
+
++ (RandomElementCollection*) generateTotallyRandomCollection {
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:NO];
+    NSMutableArray* listImageNames = [NSMutableArray arrayWithObjects:@"win_1.png",@"win_2.png",@"win_3.png",@"win_4.png",@"win_5.png",@"win_6.png",@"win_7.png",@"win_8.png",@"win_9.png",@"win_10.png",@"win_11.png",@"win_12.png",@"win_13.png",@"win_14.png",@"win_15.png",@"win_16.png",nil];
+    NSLog(@"listImageNames %@", listImageNames);
+    [RandomElementCollection addListRandomElementImage:listImageNames toCollection:collection];
+    NSLog(@"collection %@ size %d", collection, [collection getSizeOfSet]);
+    return [collection autorelease];    
 }
 
 

@@ -64,6 +64,15 @@
     [controller release];
 }
 
+-(void) pushResultsViewControllerWithCollectionTotallyRandom: (RandomElementCollection*) collection {
+    NSLog(@"Totally random controller");
+    ResultsViewController* controller = [[ResultsViewController alloc] init];
+    controller.totallyRandom = TRUE;
+    controller.collection = collection;
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];    
+}
+
 - (IBAction)onRollDiceButtonClicked:(id)sender {
     RandomElementCollection* collection = [RandomElementCollection generateRollDiceRandomCollection];
     [self pushResultsViewControllerWithCollection:collection];
@@ -93,6 +102,11 @@
     CustomRandomCollectionTableViewController* controller = [[CustomRandomCollectionTableViewController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
+}
+
+- (IBAction)onTotallyRandomButtonClicked:(id)sender {
+    RandomElementCollection* collection = [RandomElementCollection generateTotallyRandomCollection];
+    [self pushResultsViewControllerWithCollectionTotallyRandom:collection];
 }
 
 
