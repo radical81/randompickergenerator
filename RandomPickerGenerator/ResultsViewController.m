@@ -96,15 +96,6 @@
     _animatingImageView.animationRepeatCount = 5;
     [_animatingImageView startAnimating];
 }
-  
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-    if (motion == UIEventSubtypeMotionShake) {
-        [self animateUsingCollectionImages];
-    }
-}
-
 
 //Populate the result
 - (void) animationEndWithResult: (NSArray*) result {
@@ -119,6 +110,16 @@
         imageX += 55;
     }
 }
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake) {
+        [self animateUsingCollectionImages];
+        [self animationEndWithResult:[collection randomize]];
+    }
+}
+
+
 
 
 
