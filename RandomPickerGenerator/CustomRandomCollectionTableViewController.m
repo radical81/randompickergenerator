@@ -8,6 +8,8 @@
 
 #import "CustomRandomCollectionTableViewController.h"
 #import "AddCustomRandomCollectionViewController.h"
+#import "RandomElementCollection.h"
+#import "ResultsViewController.h"
 
 @implementation CustomRandomCollectionTableViewController {
     NSArray* listCustom;
@@ -18,11 +20,24 @@
     self = [super initWithStyle:style];
     if (self) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        listCustom = [defaults objectForKey:@"custom"];        
+        listCustom = [defaults objectForKey:@"custom"];
     }
     return self;
 }
 
+- (id) init {
+    if (self = [super init]) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        listCustom = [defaults objectForKey:@"custom"];
+        NSLog(@"listCustom has %d items", [listCustom count]);
+    }
+    return self;
+}
+
+- (void) dealloc {
+    [listCustom release];
+    [super dealloc];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -37,7 +52,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"View did load");
 
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -47,7 +64,10 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRandomCollection)];
     self.navigationItem.rightBarButtonItem = rightButton;
     [rightButton release];
+    
 }
+
+
 
 
 - (void) addRandomCollection {
@@ -71,6 +91,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    listCustom = [defaults objectForKey:@"custom"];
+    [self.tableView reloadData];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -99,7 +123,7 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -123,7 +147,7 @@
     NSError* error;
      NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF16StringEncoding] options:kNilOptions error:&error];
     NSString* name = [dict objectForKey:@"name"];
-    
+    cell.textLabel.text = name;
     return cell;
 }
 
@@ -178,6 +202,36 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
+    int row = [indexPath row];
+    NSString* jsonStr = [listCustom objectAtIndex:[indexPath row]];
+    NSError* error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF16StringEncoding] options:kNilOptions error:&error];
+    NSString* nSelectionStr = [dict objectForKey:@"nSelection"];
+    NSString* canRepeatStr = [dict objectForKey:@"canRepeat"];
+    NSArray* listImages = [dict objectForKey:@"images"];
+    
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:[nSelectionStr intValue]];
+    if ([canRepeatStr isEqualToString:@"1"])
+        [collection setCanRepeatElements:YES];
+    else
+        [collection setCanRepeatElements:NO];
+    
+    
+    [RandomElementCollection addListRandomElementImagePath:listImages toCollection:collection];
+    
+    
+    [collection shuffle];
+    
+    ResultsViewController* controller = [[ResultsViewController alloc] init];
+    controller.collection = collection;
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+    
+    
 }
+
+
 
 @end

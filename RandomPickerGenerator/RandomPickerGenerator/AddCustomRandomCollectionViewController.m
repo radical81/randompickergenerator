@@ -204,6 +204,7 @@
     [defaults setObject:mutableArr forKey:@"custom"];
     [defaults synchronize];
     [dict release];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSString*) generateRandomName {

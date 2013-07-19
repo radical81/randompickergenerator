@@ -12,8 +12,11 @@
 
 @property (nonatomic, retain) NSString* elementText;
 @property (nonatomic, retain) NSString* elementImage;
+@property (nonatomic, retain) NSString* elementImagePath;
+
 
 -(id) initWithText:(NSString*)_elementText;
 -(id) initWithImage:(NSString*)_elementImage;
+-(id) initWithImagePath:(NSString*)_elementImagePath;
 
 @end

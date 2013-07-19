@@ -12,6 +12,7 @@
 
 @synthesize elementText;
 @synthesize elementImage;
+@synthesize elementImagePath;
 
 -(id) initWithText:(NSString*)_elementText {
     self = [super init];
@@ -29,9 +30,20 @@
     return self;
 }
 
+
+-(id) initWithImagePath:(NSString*)_elementImagePath {
+    self = [super init];
+    if(self) {
+        self.elementImagePath = _elementImagePath;
+    }
+    return self;
+}
+
+
 -(void) dealloc {
     [elementImage release];
     [elementText release];
+    [elementImagePath release];
     [super dealloc];
 }
 @end

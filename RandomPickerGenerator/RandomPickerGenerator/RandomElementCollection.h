@@ -26,4 +26,5 @@
 + (RandomElementCollection*) generateDrawCardRandomCollection;
 + (RandomElementCollection*) generateRollDiceRandomCollection;
 
++ (void) addListRandomElementImagePath: (NSArray*) listElementImage toCollection: (RandomElementCollection*) collection;
 @end
