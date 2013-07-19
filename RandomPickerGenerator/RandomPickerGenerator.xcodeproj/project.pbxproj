@@ -91,6 +91,9 @@
 		179F3A9417982A7500E1EC32 /* dice4.png in Resources */ = {isa = PBXBuildFile; fileRef = 179F3A8C17982A7500E1EC32 /* dice4.png */; };
 		179F3A9517982A7500E1EC32 /* dice5.png in Resources */ = {isa = PBXBuildFile; fileRef = 179F3A8D17982A7500E1EC32 /* dice5.png */; };
 		179F3A9617982A7500E1EC32 /* dice6.png in Resources */ = {isa = PBXBuildFile; fileRef = 179F3A8E17982A7500E1EC32 /* dice6.png */; };
+		17B23D0817992CF60051251D /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17B23D0517992CF60051251D /* paper.jpg */; };
+		17B23D0917992CF60051251D /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17B23D0617992CF60051251D /* scissors.jpg */; };
+		17B23D0A17992CF60051251D /* rock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17B23D0717992CF60051251D /* rock.jpg */; };
 		9FEBB9731798FD740015EBD7 /* treasure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEBB9721798FD740015EBD7 /* treasure.jpg */; };
 		D1D84A2B17982C9000F605A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D84A2A17982C9000F605A5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -201,6 +204,9 @@
 		179F3A8C17982A7500E1EC32 /* dice4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice4.png; sourceTree = "<group>"; };
 		179F3A8D17982A7500E1EC32 /* dice5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice5.png; sourceTree = "<group>"; };
 		179F3A8E17982A7500E1EC32 /* dice6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice6.png; sourceTree = "<group>"; };
+		17B23D0517992CF60051251D /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paper.jpg; path = ../../../../Users/rjalobba/Downloads/paper.jpg; sourceTree = "<group>"; };
+		17B23D0617992CF60051251D /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = scissors.jpg; path = ../../../../Users/rjalobba/Downloads/scissors.jpg; sourceTree = "<group>"; };
+		17B23D0717992CF60051251D /* rock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rock.jpg; path = ../../../../Users/rjalobba/Downloads/rock.jpg; sourceTree = "<group>"; };
 		9FEBB9721798FD740015EBD7 /* treasure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = treasure.jpg; sourceTree = "<group>"; };
 		D1D84A2A17982C9000F605A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -320,6 +326,9 @@
 		1742ED0217980FFF00CCDDE8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				17B23D0517992CF60051251D /* paper.jpg */,
+				17B23D0617992CF60051251D /* scissors.jpg */,
+				17B23D0717992CF60051251D /* rock.jpg */,
 				9FEBB9721798FD740015EBD7 /* treasure.jpg */,
 				179F3A8717982A7500E1EC32 /* coin-head.jpg */,
 				179F3A8817982A7500E1EC32 /* coin-tail.jpg */,
@@ -545,6 +554,9 @@
 				179F3A9517982A7500E1EC32 /* dice5.png in Resources */,
 				179F3A9617982A7500E1EC32 /* dice6.png in Resources */,
 				9FEBB9731798FD740015EBD7 /* treasure.jpg in Resources */,
+				17B23D0817992CF60051251D /* paper.jpg in Resources */,
+				17B23D0917992CF60051251D /* scissors.jpg in Resources */,
+				17B23D0A17992CF60051251D /* rock.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

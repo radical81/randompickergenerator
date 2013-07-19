@@ -12,6 +12,7 @@
 - (IBAction)onRollDiceButtonClicked:(id)sender;
 - (IBAction)onDrawCardButtonClicked:(id)sender;
 - (IBAction)onTossCoinButtonClicked:(id)sender;
+- (IBAction)onRockPaperScissorsButtonClicked:(id)sender;
 - (IBAction)onCustomRandomButtonClicked:(id)sender;
 
 

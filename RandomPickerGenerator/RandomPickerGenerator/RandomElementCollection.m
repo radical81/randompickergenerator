@@ -67,6 +67,26 @@
     }
 }
 
++ (void) addListRandomElementImage: (NSArray*) listElementImage toCollection:(RandomElementCollection*) collection {
+    NSMutableArray* arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [listElementImage count]; i++) {
+        RandomElement* element = [[RandomElement alloc] initWithImage:[listElementImage objectAtIndex:i]];
+        [arr addObject:element];
+        [element release];
+    }
+    [collection setRandomElementsArray:arr];
+    [arr release];
+}
+
++ (RandomElementCollection*) generateRockPaperScissorsCollection {
+    RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:NO];
+    NSMutableArray* imageNames = [NSMutableArray arrayWithObjects:@"rock.jpg", @"scissors.jpg", @"paper.jpg", nil];
+    [RandomElementCollection addListRandomElementImage:imageNames toCollection:collection];    
+    return [collection autorelease];
+}
+
 + (RandomElementCollection*) generateTossCoinRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
     [collection setNumberOfSelections:1];
@@ -129,16 +149,7 @@
     return [collection autorelease];
 }
 
-+ (void) addListRandomElementImage: (NSArray*) listElementImage toCollection:(RandomElementCollection*) collection {
-    NSMutableArray* arr = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [listElementImage count]; i++) {
-        RandomElement* element = [[RandomElement alloc] initWithImage:[listElementImage objectAtIndex:i]];
-        [arr addObject:element];
-        [element release];
-    }
-    [collection setRandomElementsArray:arr];
-    [arr release];
-}
+
 
 
 @end
