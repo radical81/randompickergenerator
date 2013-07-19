@@ -9,16 +9,20 @@
 #import "CustomRandomCollectionTableViewController.h"
 #import "AddCustomRandomCollectionViewController.h"
 
-@implementation CustomRandomCollectionTableViewController
+@implementation CustomRandomCollectionTableViewController {
+    NSArray* listCustom;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        listCustom = [defaults objectForKey:@"custom"];        
     }
     return self;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -101,8 +105,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    // Return the number of rows in the section.    
+    return [listCustom count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,6 +119,10 @@
     }
     
     // Configure the cell...
+    NSString* jsonStr = [listCustom objectAtIndex:[indexPath row]];
+    NSError* error;
+     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF16StringEncoding] options:kNilOptions error:&error];
+    NSString* name = [dict objectForKey:@"name"];
     
     return cell;
 }
