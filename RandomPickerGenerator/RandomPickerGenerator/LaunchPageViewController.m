@@ -60,6 +60,12 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (void) pushResultsViewControllerWithCollection: (RandomElementCollection*) collection {
+    ResultsViewController* controller = [[ResultsViewController alloc] init];
+    controller.collection = collection;
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
+}
 
 - (IBAction)onRollDiceButtonClicked:(id)sender {
     RandomElementCollection* collection = [RandomElementCollection generateRollDiceRandomCollection];
@@ -82,17 +88,7 @@
     [controller release];
 }
 
-- (void) pushResultsViewControllerWithCollection: (RandomElementCollection*) collection {
-    ResultsViewController* controller = [[ResultsViewController alloc] init];
-    controller.collection = collection;
-    [self.navigationController pushViewController:controller animated:YES];
-    [controller release];
-    
-//    RVViewController* controller = [[RVViewController alloc] init];
-//    [self.navigationController pushViewController:controller animated:YES];
-//    [controller release];
-    
-}
+
 
 - (void)dealloc {
     [super dealloc];
