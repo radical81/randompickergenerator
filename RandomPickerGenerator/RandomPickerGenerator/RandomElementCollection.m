@@ -53,6 +53,9 @@
     return resultSet;
 }
 
+-(int) getIndexForRandomElement: (RandomElement*) element {
+    return [randomElementsArray indexOfObject:element];
+}
 
 + (RandomElementCollection*) generateTossCoinRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
@@ -65,6 +68,39 @@
 
 + (RandomElementCollection*) generateDrawCardRandomCollection {
     RandomElementCollection* collection = [[RandomElementCollection alloc] init];
+    [collection setNumberOfSelections:1];
+    [collection setCanRepeatElements:YES];
+    NSMutableArray* arr = [NSMutableArray array];
+    for (int i = 457; i <= 466; i++) {
+        NSString* name = [NSString stringWithFormat:@"718%d_f260.jpg", i];
+        [arr addObject:name];
+    }
+    [arr addObject:@"718468_f260.jpg"];
+    [arr addObject:@"718527_f260.jpg"];
+    
+    for (int i = 478; i <= 485; i++) {
+        NSString* name = [NSString stringWithFormat:@"718%d_f260.jpg", i];
+        [arr addObject:name];
+    }
+    
+    for (int i = 489; i <= 496; i++) {
+        NSString* name = [NSString stringWithFormat:@"718%d_f260.jpg", i];
+        [arr addObject:name];
+    }
+    
+    for (int i = 499; i <= 506; i++) {
+        NSString* name = [NSString stringWithFormat:@"718%d_f260.jpg", i];
+        [arr addObject:name];
+    }
+    
+    for (int i = 509; i <= 524; i++) {
+        NSString* name = [NSString stringWithFormat:@"718%d_f260.jpg", i];
+        [arr addObject:name];
+    }
+    
+    
+    
+    [RandomElementCollection addListRandomElementImage:arr toCollection:collection];
     return [collection autorelease];
 }
 

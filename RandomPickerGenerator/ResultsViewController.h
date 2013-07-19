@@ -10,7 +10,8 @@
 #import "RandomElementCollection.h"
 #import "RVCollectionViewLayout.h"
 
-@interface ResultsViewController : UIViewController
+@interface ResultsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
+
 @property (nonatomic, retain) RandomElementCollection* collection;
 
 

@@ -42,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"Let's get random"];
     [self initImages];
     
     [self.collectionView registerClass:[RVCollectionViewCell class] forCellWithReuseIdentifier:@"ItemIdentifier"];
@@ -84,13 +85,18 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You shake"
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You shake"
+//                                                        message:nil
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//        [alert release];
+        
+        NSMutableArray* result  = [collection randomize];
+        for (RandomElement* element in result) {
+            NSLog(@"%@", [element elementImage]);
+        }
     }
 }
 
@@ -145,18 +151,7 @@
     NSLog(@"Init Images");
     self.imagesArray = [NSMutableArray array];
     self.imageNamesArray = [NSMutableArray array];
-    
-//    UIImageView * image1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dice1"]];
-//    UIImageView * image2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dice2"]];
-//    UIImageView * image3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"dice3"]];
-//
-//    
-//    [self.imagesArray addObject:image1];
-//    self.imageNamesArray[0] = @"dice1";
-//    [self.imagesArray addObject:image2];
-//    self.imageNamesArray[1] = @"dice2";
-//    [self.imagesArray addObject:image3];
-//    self.imageNamesArray[2] = @"dice3";
+
     
     for (int i = 0; i < [collection getSizeOfSet]; i++) {
         RandomElement* element = [collection getElementAtIndex:i];
