@@ -14,7 +14,7 @@
 
 @implementation AddCustomRandomCollectionViewController
 @synthesize listImages;
-
+@synthesize nameTextField = _nameTextField;
 @synthesize addImagesButton = _addImagesButton;
 @synthesize imageAddedLabel = _imageAddedLabel;
 @synthesize nSelectionTextField = _nSelectionTextField;
