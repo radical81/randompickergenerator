@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 ralobba@gmail.com. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface RandomPickerGeneratorTests : SenTestCase
+@interface RandomPickerGeneratorTests : XCTestCase
 
 @end
